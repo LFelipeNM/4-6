@@ -1,0 +1,142 @@
+// EXERCICIO 4 com ajuda do chatgpt //
+// // Definindo os naipes e valores das cartas
+// const naipes = ['Espadas', 'Copas', 'Ouros', 'Paus'];
+// const valores = ['Ás', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Valete', 'Dama', 'Rei'];
+
+// // Criando um baralho com todas as combinações de naipes e valores
+// const baralho = [];
+// for (const valor of valores) {
+//     for (const naipe of naipes) {
+//         baralho.push({ valor, naipe });
+//     }
+// }
+
+// // Função para embaralhar um array usando o algoritmo Fisher-Yates
+// function embaralhar(array) {
+//     for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]];
+//     }
+// }
+
+// // Função para distribuir cartas para os jogadores
+// function distribuirCartas(baralho, numCartas) {
+//     return baralho.splice(0, numCartas);
+// }
+
+// // Número de jogadores
+// const numJogadores = 4;
+
+// // Embaralhando o baralho
+// embaralhar(baralho);
+
+// // Distribuindo 5 cartas para cada jogador
+// const maos = [];
+// for (let i = 0; i < numJogadores; i++) {
+//     maos.push(distribuirCartas(baralho, 5));
+// }
+
+// // Construindo as mensagens das mãos dos jogadores
+// let mensagem = '';
+// for (let i = 0; i < maos.length; i++) {
+//     mensagem += `Mão do Jogador ${i + 1}:\n`;
+//     for (const carta of maos[i]) {
+//         mensagem += `${carta.valor} de ${carta.naipe}\n`;
+//     }
+//     mensagem += '\n';
+// }
+
+// // Exibindo as mãos dos jogadores usando alert
+// alert(mensagem);
+
+
+
+//EXERCICO 5 logica sem ajuda do chat //
+// let estoque = [];
+
+// function adicionarItem() {
+//     let novoItem = prompt("Digite a tarefa para realizar:");
+//     estoque.push(novoItem);
+//     alert("Tarefa adicionada na lista: " + novoItem);
+// }
+
+// function exibirCarrinho() {
+//     if (estoque.length === 0) {
+//         alert("Você não tem tarefas.");
+//         return;
+//     }
+
+//     let listaItens = "Tarefas para fazer:\n";
+//     estoque.forEach(function(item, index) {
+//         listaItens += index + ": " + item + "\n";
+//     });
+
+//     alert(listaItens);
+// }
+// function removercarrinho() {
+//     if (estoque.length === 0) {
+//         alert("Você não tem tarefas para remover.");
+//         return;
+//     }
+
+//     let remover = prompt("Realizei qual matéria?");
+    
+//     // Encontrar o índice da tarefa a ser removida
+//     const indiceRemover = estoque.indexOf(remover);
+    
+//     if (indiceRemover !== -1) {
+//         estoque.splice(indiceRemover, 1); // Remover 1 elemento a partir do índice encontrado
+//         alert("Tarefa " + remover + " removida.");
+//     } else {
+//         alert("Tarefa não encontrada.");
+//     }
+// }
+
+// while (true) { 
+//     let item = prompt("Esse e o programa para ajudar você se organizar.\nDigite 'Adicionar Tarefas','Ver Tarefas','Remover tarefas'");
+
+//     switch (item) {
+//         case "Adicionar Tarefas":
+//             adicionarItem();
+//             break;
+
+//         case "Ver Tarefas":
+//             exibirCarrinho();
+//             break;
+
+//         case "Remover Tarefas": 
+//         removercarrinho()
+//         break; 
+
+//         default:
+//             alert("Opção inválida.");
+//     }
+// }
+
+//EXERCICIO 6 SEM AJUDA DO CHAT//
+// const gastosD = [];
+
+
+// function inserir() {
+//     const gasto = parseFloat(prompt("Insira o valor do gasto diário:"));
+//     gastosD.push(gasto);
+//     alert("Gasto diário inserido: R$" + gasto);
+// }
+
+
+// function Total() {
+//     let soma = 0;
+//     for (const gasto of gastosD) {
+//         soma += gasto;
+//     }
+//     return soma;
+// }
+
+
+// for (let dia = 1; dia <= 30; dia++) {
+//     inserir();
+// }
+
+
+// const somaTotal = Total();
+// alert("Total de gastos no mês: R$" + somaTotal.toFixed(2));
